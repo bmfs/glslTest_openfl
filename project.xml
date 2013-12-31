@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="GlslTest" package="com.example.glsltest" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="GlslTest" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="tilelayer" />
+	
+	<assets path="Assets" rename="assets" exclude="openfl.svg" />
+	<assets path="Assets/shaders" rename="shaders" />
+	<icon path="Assets/openfl.svg" />
+	
+</project>
