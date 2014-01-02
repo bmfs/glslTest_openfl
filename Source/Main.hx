@@ -19,9 +19,6 @@ import openfl.display.Shader;
 class Main extends Sprite {
 	
 	public var piecesLayer:TileLayer;
-	
-	public var bluredPieces:Sprite;
-	public var bluredPieces2:Sprite;
 
 	public var specialSprite:SpecialSprite;
 
@@ -42,51 +39,30 @@ class Main extends Sprite {
 	private var shader2:Shader;
 	private var shader3:Shader;
 
-	private var shader4:PrimitiveShader;
-
 	private var startTime:Int;
 
 	public function new () {
 		
 		super ();
 		
-		shader = new Shader(Assets.getText ("shaders/normal.vert"), Assets.getText ("shaders/texture.frag"));
-
-		shader2 = new Shader(Assets.getText ("shaders/normal.vert"), Assets.getText ("shaders/vertblur.frag"));
-
-		shader3 = new Shader(Assets.getText ("shaders/normal.vert"), Assets.getText ("shaders/blur.frag"));
-		shader4 = new PrimitiveShader(Assets.getText ("shaders/heroku2.vert"), Assets.getText ("shaders/texture.frag"));
-
 
 		var sheetData = Assets.getText("assets/pieces.xml");
 		var tilesheet = new SparrowTilesheet(Assets.getBitmapData("assets/pieces.png"), sheetData);
 		
 		piecesLayer = new TileLayer(tilesheet);
-		bluredPieces = new Sprite();
-		bluredPieces2 = new Sprite();
 
 		piece1 = new TileSprite(piecesLayer, "target");	
+		piece2 = new TileSprite(piecesLayer, "z");
 
 		piecesGroup = new TileGroup(piecesLayer);
 		piecesGroup.addChild(piece1);
+		piecesGroup.addChild(piece2);
 
 		piecesLayer.addChild(piecesGroup);
 
-		//addChild(piecesLayer.view);
-		//piecesShaderGroup = new TileShaderGroup();
-		//addChild(piecesShaderGroup.view);
-		//addChild(bluredPieces);
-		//addChild(bluredPieces2);
-
-		specialSprite = new SpecialSprite(piecesLayer, shader4);
+		specialSprite = new SpecialSprite(piecesLayer);
 		addChild(specialSprite);
-
-		//piecesShaderGroup.setLayer(piecesLayer);
-		//piecesShaderGroup.addShader(shader);
-		//piecesShaderGroup.addShader(shader3);
-		//piecesShaderGroup.addShader(shader2);
 		
-
 
 		startTime = Lib.getTimer();
 
@@ -97,54 +73,30 @@ class Main extends Sprite {
 
 	public function update():Void
 	{
-		shader.setUniformValue("uTimer", (Lib.getTimer() - startTime) / 1000);
-
 		if (movingDown) {
 			piece1.y += 20;
+			piece2.y += 10;
 		}
 
 		if (movingUp) {
 			piece1.y -= 20;
+			piece2.y -= 10;
 		}
 
 		if (movingLeft){
 			piece1.x -= 20;
+			piece2.x -= 10;
 		}
 
 		if (movingRight){
 			piece1.x += 20;
+			piece2.x += 10;
 		}
 	}
 
 	public function render():Void
 	{
-		//piecesShaderGroup.render();
-
-		
-
-		/*bluredPieces.graphics.attachShader(shader2);*/
 		piecesLayer.render();
-		//piecesLayer.view.graphics.attachShader(shader2);
-
-		/*var bd = new BitmapData( stage.stageWidth, stage.stageHeight );
-		bd.draw(piecesLayer.view);
-
-		bluredPieces.graphics.clear();
-		
-		bluredPieces.graphics.beginBitmapFill(bd, null, false);
-		bluredPieces.graphics.drawRect(0,0,bd.width,bd.height);
-		bluredPieces.graphics.endFill();
-
-		bluredPieces2.graphics.attachShader(shader3);
-		piecesLayer.render();
-		var bd2 = new BitmapData( stage.stageWidth, stage.stageHeight );
-		bd2.draw(piecesLayer);
-
-		bluredPieces2.graphics.clear();
-		bluredPieces2.graphics.beginBitmapFill(bd);
-		bluredPieces2.graphics.drawRect(0,0,bd.width,bd.height);*/
-
-
 	}
 
 	private function stage_onKeyDown (event:KeyboardEvent):Void {

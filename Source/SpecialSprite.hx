@@ -16,7 +16,7 @@ class SpecialSprite extends Sprite{
 	public var texture2:GLTexture;
 	public var renderbuffer2:GLRenderbuffer;
 
-	public function new( tilelayer:TileLayer, shader:PrimitiveShader){
+	public function new( tilelayer:TileLayer){
 		super();
 
  		addChild(tilelayer.view);
@@ -39,7 +39,9 @@ class SpecialSprite extends Sprite{
 																		Assets.getText ("shaders/vertblur.frag"))
 											));
 
-		this.addChild(new After(texture1, shader));
+		this.addChild(new After(texture1, new PrimitiveShader(	Assets.getText ("shaders/heroku2.vert"), 
+																Assets.getText ("shaders/texture.frag"))
+											));
 	}
 
 	public function setupFBO(width:Int, height:Int):Void 
