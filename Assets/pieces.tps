@@ -151,6 +151,7 @@
             <filename>l.png</filename>
             <filename>line.png</filename>
             <filename>z.png</filename>
+            <filename>target.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

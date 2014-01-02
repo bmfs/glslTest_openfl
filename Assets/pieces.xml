@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:7bae35be60b6a70e0973c2a2ed91fa13:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:d575965b01ea22e5d052ec439876eb00:1/1$ -->
 <TextureAtlas imagePath="pieces.png">
-    <SubTexture name="l" x="2" y="64" width="60" height="80" frameX="-20" frameY="-10" frameWidth="100" frameHeight="100"/>
+    <SubTexture name="l" x="2" y="136" width="60" height="80" frameX="-20" frameY="-10" frameWidth="100" frameHeight="100"/>
     <SubTexture name="line" x="84" y="2" width="40" height="100" frameX="-30" frameY="0" frameWidth="100" frameHeight="100"/>
+    <SubTexture name="target" x="2" y="64" width="70" height="70"/>
     <SubTexture name="z" x="2" y="2" width="80" height="60" frameX="-10" frameY="-20" frameWidth="100" frameHeight="100"/>
 </TextureAtlas>
