@@ -23,7 +23,7 @@ class SpecialSprite extends Sprite{
 
  		setupFBO(800,600);
 
- 		GL.enable( GL.DEPTH_TEST );
+
  	
 		GL.bindFramebuffer(GL.FRAMEBUFFER, null);
  	
@@ -53,12 +53,12 @@ class SpecialSprite extends Sprite{
 		GL.bindTexture(GL.TEXTURE_2D, texture1);
 		GL.texImage2D(	GL.TEXTURE_2D,
 						0,
-						GL.RGB, 
+						GL.RGBA, 
 						width,
 						height, 
 						0, 
-						GL.RGB,
-						GL.UNSIGNED_SHORT_5_6_5,
+						GL.RGBA,
+						GL.UNSIGNED_BYTE,
 						null);
 		
 
@@ -103,12 +103,12 @@ class SpecialSprite extends Sprite{
 		GL.bindTexture(GL.TEXTURE_2D, texture2);
 		GL.texImage2D(	GL.TEXTURE_2D,
 						0,
-						GL.RGB, 
+						GL.RGBA, 
 						width,
 						height, 
 						0, 
-						GL.RGB,
-						GL.UNSIGNED_SHORT_5_6_5,
+						GL.RGBA,
+						GL.UNSIGNED_BYTE,
 						null);
 		
 

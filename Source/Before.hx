@@ -16,5 +16,9 @@ class Before extends OpenGLView{
         GL.viewport (0,0, 800,600);
         GL.clearColor (1.0, 1.0, 1.0, 1.0);
         GL.clear (GL.DEPTH_BUFFER_BIT |GL.COLOR_BUFFER_BIT);
+
+        GL.disable( GL.DEPTH_TEST );
+ 		GL.enable(GL.BLEND);
+        GL.blendFunc(GL.SRC_ALPHA, GL.ONE_MINUS_SRC_ALPHA);
     }
 }
