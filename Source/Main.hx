@@ -10,11 +10,7 @@ import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
 import flash.display.BitmapData;
 
-
-
 import flash.Lib;
-
-import openfl.display.Shader;
 
 class Main extends Sprite {
 	
@@ -32,12 +28,6 @@ class Main extends Sprite {
 
 	private var piece1:TileSprite;
 	private var piece2:TileSprite;
-
-	private var piecesShaderGroup:TileShaderGroup;
-
-	private var shader:Shader;
-	private var shader2:Shader;
-	private var shader3:Shader;
 
 	private var startTime:Int;
 
