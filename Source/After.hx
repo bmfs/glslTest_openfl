@@ -72,8 +72,8 @@ class After extends OpenGLView{
         GL.bindFramebuffer(GL.FRAMEBUFFER, null);
         //var modelViewMatrix = Matrix3D.create2D (positionX, positionY, 1, 0);
 
-        //GL.clearColor (1.0, 1.0, 1.0, 1.0);
-        //GL.clear (GL.COLOR_BUFFER_BIT | GL.DEPTH_BUFFER_BIT );
+        GL.clearColor (1.0, 1.0, 1.0, 1.0);
+        GL.clear (GL.COLOR_BUFFER_BIT | GL.DEPTH_BUFFER_BIT );
 
         if (shader.program == null) return;
         

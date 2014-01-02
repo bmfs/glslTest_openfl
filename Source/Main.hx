@@ -52,7 +52,7 @@ class Main extends Sprite {
 		piecesLayer = new TileLayer(tilesheet);
 
 		piece1 = new TileSprite(piecesLayer, "target");	
-		piece2 = new TileSprite(piecesLayer, "z");
+		piece2 = new TileSprite(piecesLayer, "target");
 
 		piecesGroup = new TileGroup(piecesLayer);
 		piecesGroup.addChild(piece1);

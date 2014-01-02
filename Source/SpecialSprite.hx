@@ -41,7 +41,7 @@ class SpecialSprite extends Sprite{
 
 		this.addChild(new After(texture1, new PrimitiveShader(	Assets.getText ("shaders/heroku2.vert"), 
 																Assets.getText ("shaders/texture.frag"))
-											));
+									));
 	}
 
 	public function setupFBO(width:Int, height:Int):Void 

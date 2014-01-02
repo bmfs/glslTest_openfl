@@ -70,7 +70,7 @@ class RenderToTextureLayer extends OpenGLView{
         GL.bindFramebuffer(GL.FRAMEBUFFER, this.framebuffer);
 
         GL.viewport (0,0, 800,600);
-        GL.clearColor (1.0, 1.0, 1.0, 1.0);
+        GL.clearColor (0.0, 0.0, 0.0, 1.0);
         GL.clear (GL.DEPTH_BUFFER_BIT |GL.COLOR_BUFFER_BIT);
 
         if (shader.program == null) return;
